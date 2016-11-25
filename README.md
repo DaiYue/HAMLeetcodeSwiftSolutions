@@ -4,4 +4,4 @@
 
 | #        | 题目           | 题解  |
 | ------------- |:-------------:| -----:|
-| 1      | [Two Sum](https://leetcode.com/problems/two-sum/) | [链接](https://github.com/DaiYue/HAMLeetcodeSwiftSolutions/tree/master/solutions/1_Two_Sum.playground) |
+| 1      | [Two Sum](https://leetcode.com/problems/two-sum/) | [链接](https://github.com/DaiYue/HAMLeetcodeSwiftSolutions/blob/master/solutions/1_Two_Sum.playground/Contents.swift) |
