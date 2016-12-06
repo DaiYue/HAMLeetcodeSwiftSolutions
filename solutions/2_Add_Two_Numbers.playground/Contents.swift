@@ -1,6 +1,7 @@
 // #2 Add Two Numbers https://leetcode.com/problems/add-two-numbers/
 // 简单的单链表处理。考虑几种情况：1. 两个数位数相等，且最高位不需进位 2. 两个数位数相等，且最高位需要进位 3. 两个数位数不相等
-// 时间复杂度：O(n) 空间复杂度：O(n)
+// 有些算法会在结果的头部先创建一个 dummy，val 任意，真正的头结点直接往 dummy 后面插。最后返回 dummy -> next
+// 时间复杂度：O(n) 空间复杂度：O(1)
 
 public class ListNode {
     public var val: Int
@@ -27,33 +28,27 @@ class Solution {
         var head:ListNode? = nil
         var tail:ListNode? = nil
 
-        var carry:Int = 0
+        var carry = 0
         while l1Tail != nil || l2Tail != nil {
-            var val = (l1Tail?.val ?? 0) + (l2Tail?.val ?? 0) + carry
-            if val >= 10 {
-                carry = 1
-                val -= 10
-            } else {
-                carry = 0
-            }
+            let sum = (l1Tail?.val ?? 0) + (l2Tail?.val ?? 0) + carry
+            carry = sum / 10
+            let val = sum % 10
             
             let node = ListNode(val)
             
             if head == nil {
                 head = node
-                tail = node
             } else {
                 tail!.next = node
-                tail = node
             }
+            tail = node
             
             l1Tail = l1Tail?.next
             l2Tail = l2Tail?.next
         }
         
         if carry != 0 {
-            let node = ListNode(carry)
-            tail?.next = node
+            tail?.next = ListNode(carry)
         }
         
         return head;
