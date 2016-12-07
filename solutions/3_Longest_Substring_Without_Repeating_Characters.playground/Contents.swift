@@ -22,7 +22,7 @@ class Solution {
             } else {
                 let previousIndex = letterAppearedDict[char]!
                 
-                for clearIndex in index - currentLength..<previousIndex {
+                for clearIndex in index - currentLength ..< previousIndex {
                     letterAppearedDict[chars[clearIndex]] = nil
                 }
                 letterAppearedDict[char] = index
