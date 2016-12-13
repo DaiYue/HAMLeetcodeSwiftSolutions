@@ -4,19 +4,20 @@ class Solution {
     func longestPalindrome(_ s: String) -> String {
         
         var isPalidromeMatrix = [[Bool]]()
-        for _ in 0 ..< s.characters.count {
-            let array = Array(repeating: false, count : s.characters.count)
+        let length = s.characters.count
+        for _ in 0 ..< length {
+            let array = Array(repeating: false, count : length)
             isPalidromeMatrix.append(array)
         }
         
         let chars = [Character](s.characters)
         var longestPalindrome = ""
         
-        for palidromeLength in 1 ... s.characters.count {
-            for startIndex in 0 ..< s.characters.count {
+        for palidromeLength in 1 ... length {
+            for startIndex in 0 ..< length {
                 let endIndex = startIndex + palidromeLength - 1
                 
-                guard endIndex <= s.characters.count - 1 else {
+                guard endIndex <= length - 1 else {
                     break
                 }
                 
