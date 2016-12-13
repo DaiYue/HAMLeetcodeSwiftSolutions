@@ -3,12 +3,8 @@
 class Solution {
     func longestPalindrome(_ s: String) -> String {
         
-        var isPalidromeMatrix = [[Bool]]()
         let length = s.characters.count
-        for _ in 0 ..< length {
-            let array = Array(repeating: false, count : length)
-            isPalidromeMatrix.append(array)
-        }
+        var isPalidromeMatrix = Array(repeating: Array(repeating: false, count : length), count : length)
         
         let chars = [Character](s.characters)
         var longestPalindrome = ""
@@ -39,4 +35,4 @@ class Solution {
     }
 }
 
-Solution().longestPalindrome("cacbc")
+Solution().longestPalindrome("abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababa")
