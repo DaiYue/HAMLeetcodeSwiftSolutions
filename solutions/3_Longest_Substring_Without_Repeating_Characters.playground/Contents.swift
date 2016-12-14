@@ -41,3 +41,4 @@ Solution().lengthOfLongestSubstring("abcabcbb")
 Solution().lengthOfLongestSubstring("bbbbb")
 Solution().lengthOfLongestSubstring("pwwkew")
 Solution().lengthOfLongestSubstring("")
+max

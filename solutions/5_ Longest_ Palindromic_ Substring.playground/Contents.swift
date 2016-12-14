@@ -3,36 +3,43 @@
 class Solution {
     func longestPalindrome(_ s: String) -> String {
         
-        let length = s.characters.count
+        let chars = [Character](s.characters)
+        let length = chars.count
+        guard length > 0 else {
+            return ""
+        }
+        
         var isPalidromeMatrix = Array(repeating: Array(repeating: false, count : length), count : length)
         
-        let chars = [Character](s.characters)
-        var longestPalindrome = ""
+        var maxLength = 0
+        var maxStartIndex = 0
         
         for palidromeLength in 1 ... length {
-            for startIndex in 0 ..< length {
+            for startIndex in 0 ... length - palidromeLength {
                 let endIndex = startIndex + palidromeLength - 1
-                
-                guard endIndex <= length - 1 else {
-                    break
-                }
+                var isPalidrome = false
                 
                 if palidromeLength == 1 {
-                    isPalidromeMatrix[startIndex][endIndex] = true
+                    isPalidrome = true
                 } else if palidromeLength == 2 {
-                    isPalidromeMatrix[startIndex][endIndex] = chars[startIndex] == chars[endIndex]
+                    isPalidrome = chars[startIndex] == chars[endIndex]
                 } else {
-                    isPalidromeMatrix[startIndex][endIndex] = chars[startIndex] == chars[endIndex] && isPalidromeMatrix[startIndex + 1][endIndex - 1]
+                    isPalidrome = chars[startIndex] == chars[endIndex] && isPalidromeMatrix[startIndex + 1][endIndex - 1]
                 }
                 
-                if isPalidromeMatrix[startIndex][endIndex] && palidromeLength > longestPalindrome.characters.count {
-                    longestPalindrome = String(chars[startIndex...endIndex])
+                if isPalidrome {
+                    isPalidromeMatrix[startIndex][endIndex] = true
+                    
+                    if palidromeLength > maxLength {
+                        maxStartIndex = startIndex
+                        maxLength = palidromeLength
+                    }
                 }
             }
         }
         
-        return longestPalindrome
+        return String(chars[maxStartIndex...maxStartIndex + maxLength - 1])
     }
 }
 
-Solution().longestPalindrome("abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababa")
+Solution().longestPalindrome("000")
