@@ -1,4 +1,5 @@
 // #7 Reverse Integer https://leetcode.com/problems/reverse-integer/
+// 这题本身很简单，但感觉是道不错的面试题。可以测试面试者是否考虑各种边界情况，对溢出有没有概念。
 
 class Solution {
     func reverse(_ x: Int) -> Int {
