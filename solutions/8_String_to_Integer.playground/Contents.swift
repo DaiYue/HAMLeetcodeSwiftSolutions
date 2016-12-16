@@ -1,4 +1,5 @@
 // #8 String to Integer https://leetcode.com/problems/string-to-integer-atoi/
+// 这道题与其说是写代码不如说是写 case…… 一堆 case，真是一点懒都不能偷呀。
 
 class Solution {
     func myAtoi(_ str: String) -> Int {
