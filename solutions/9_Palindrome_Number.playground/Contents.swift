@@ -1,4 +1,5 @@
 // #9 Palindrome Number https://leetcode.com/problems/palindrome-number/
+// 很简单的题，没给出的条件是负数不算回文数。有个 case 1000021 一开始做错了。另外一开始写了个递归，后来发现没必要……
 
 class Solution {
     func isPalindrome(_ x: Int) -> Bool {
