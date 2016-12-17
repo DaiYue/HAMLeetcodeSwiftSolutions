@@ -2,7 +2,7 @@
 
 class Solution {
     func isPalindrome(_ x: Int) -> Bool {
-        if x < 0 {
+        guard x >= 0 else {
             return false
         }
         
@@ -11,20 +11,17 @@ class Solution {
             divider *= 10
         }
         
-        return isPalindrome(target: x, divider: divider)
-    }
-    
-    func isPalindrome(target:Int, divider:Int) -> Bool {
-        if divider <= 1 {
-            return true
+        var target = x
+        while divider >= 10 {
+            if target / divider != target % 10 {
+                return false
+            }
+            
+            target = (target % divider) / 10
+            divider = divider / 100
         }
         
-        if target / divider != target % 10 {
-            return false
-        }
-        
-        let nextTarget = (target % divider) / 10
-        return isPalindrome(target: nextTarget, divider: divider / 100)
+        return true
     }
 }
 
