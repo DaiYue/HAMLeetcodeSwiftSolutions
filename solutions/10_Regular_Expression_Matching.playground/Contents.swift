@@ -20,10 +20,6 @@ class Solution {
             return []
         }
         
-        guard chars.count > 1 else {
-            return [Token(char:chars[0], isStar:false)]
-        }
-        
         var tokens = [Token]()
         var lastToken:Token? = nil
         var index = 0
@@ -49,14 +45,13 @@ class Solution {
                     }
                 }
                 lastToken = Token(char: char, isStar: true)
-                tokens.append(lastToken!)
                 index = index + 2
                 
             } else {
                 lastToken = Token(char: char, isStar: false)
-                tokens.append(lastToken!)
                 index = index + 1
             }
+            tokens.append(lastToken!)
         }
         if index <= chars.count - 1 {
             tokens.append(Token(char: chars[index], isStar: false))
@@ -70,12 +65,11 @@ class Solution {
         guard tokens.count > 0 else {
             if sChars.count == 0 {
                 return true
-            } else {
-                return false
             }
+            return false
         }
         
-        let token = tokens[0] // pChar chould be .
+        let token = tokens[0]
         let sChar = sChars.count > 0 ? sChars[0] : nil
         let nextS = dropFirstSafe(array: sChars) as! [Character]
         let nextTokens = dropFirstSafe(array: tokens) as! [Token]
@@ -83,19 +77,16 @@ class Solution {
         let match = (token.char == "." && sChar != nil) || token.char == sChar
         
         if token.isStar {
-            if match {
-                if isMatch(sChars:nextS, tokens:nextTokens) || isMatch(sChars:nextS, tokens:tokens) {
-                    return true
-                }
+            if match && (isMatch(sChars:nextS, tokens:nextTokens) || isMatch(sChars:nextS, tokens:tokens)) {
+                return true
             }
             return isMatch(sChars:sChars, tokens:nextTokens)
             
         } else {
             if match {
                 return isMatch(sChars:nextS, tokens:nextTokens)
-            } else {
-                return false
             }
+            return false
         }
     }
     
@@ -107,8 +98,8 @@ class Solution {
     }
 }
 
-//Solution().isMatch("aa", "a")
-//Solution().isMatch("aa", "aa")
+Solution().isMatch("aa", "a")
+Solution().isMatch("aa", "aa")
 //Solution().isMatch("aaa", "aa")
 //Solution().isMatch("aa", "a*")
 //Solution().isMatch("aa", ".*")
