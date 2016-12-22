@@ -27,7 +27,7 @@ class Solution {
         }
         let nextP = subString(chars: pChars, fromIndex:(isStar ? 2 : 1))
         
-        let match = pChar == "." || pChar == sChar
+        let match = (pChar == "." && sChar != nil) || pChar == sChar
         
         if isStar {
             if match {
