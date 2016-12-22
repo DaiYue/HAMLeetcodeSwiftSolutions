@@ -2,11 +2,12 @@
 
 class Solution {
     func isMatch(_ s: String, _ p: String) -> Bool {
-        s
-        p
-        
         let sChars = [Character](s.characters)
         let pChars = [Character](p.characters)
+        return isMatch(sChars: sChars, pChars: pChars)
+    }
+    
+    func isMatch(sChars : [Character], pChars : [Character]) -> Bool {
         
         guard pChars.count > 0 else {
             if sChars.count == 0 {
@@ -18,38 +19,38 @@ class Solution {
         
         let pChar = pChars[0] // pChar chould be .
         let sChar = sChars.count > 0 ? sChars[0] : nil
-        let nextS = subString(chars: sChars, fromIndex: 1)
+        let nextS = dropFirstSafe(chars: sChars, count: 1)
         var isStar = false
         if pChars.count > 1 {
             if pChars[1] == "*" {
                 isStar = true
             }
         }
-        let nextP = subString(chars: pChars, fromIndex:(isStar ? 2 : 1))
+        let nextP = dropFirstSafe(chars: pChars, count:(isStar ? 2 : 1))
         
         let match = (pChar == "." && sChar != nil) || pChar == sChar
         
         if isStar {
             if match {
-                if isMatch(nextS, nextP) || isMatch(nextS, p) {
+                if isMatch(sChars:nextS, pChars:nextP) || isMatch(sChars:nextS, pChars:pChars) {
                     return true
                 }
             }
-            return isMatch(s, nextP)
+            return isMatch(sChars:sChars, pChars:nextP)
         } else {
             if match {
-                return isMatch(nextS, nextP)
+                return isMatch(sChars:nextS, pChars:nextP)
             } else {
                 return false
             }
         }
     }
     
-    func subString(chars:[Character], fromIndex:Int) -> String {
-        if fromIndex >= chars.count {
-            return ""
+    func dropFirstSafe(chars:[Character], count:Int) -> [Character] {
+        if count >= chars.count {
+            return []
         }
-        return String(chars[fromIndex..<chars.count])
+        return Array(chars.dropFirst(count))
     }
 }
 
@@ -61,4 +62,4 @@ class Solution {
 //Solution().isMatch("ab", ".*")
 //Solution().isMatch("aab", "c*a*b")
 //Solution().isMatch("a", "ab*")
-Solution().isMatch("ab", ".*c")
+Solution().isMatch("aaaaaaaaaaaaab", "a*a*a*a*a*a*a*a*a*a*c")
