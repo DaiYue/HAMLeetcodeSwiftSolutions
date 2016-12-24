@@ -1,5 +1,9 @@
 // #10 Regular Expression Matching https://leetcode.com/problems/regular-expression-matching/
-// 评级为 hard，但感觉这题不难…… 一个问题就是直接递归会超时。需要先把正则式处理一下：a*a* 合并为 a*，a*.*b* 合并为 .*（就是 .* 前后所有的 x* 全都去掉）。
+// 评级为 hard，但感觉这题不难…… 就是递归一位一位往后读，遇到 * 就分两种情况，用尽这个 token 或者下轮接着用这个 token。
+// 一个问题就是直接递归会超时。需要先把正则式处理一下：
+// 1. a*a* 合并为 a*
+// 2. a*.*b* 合并为 .*（就是 .* 前后所有的 x* 全都去掉）。
+// 时间复杂度：O(n) 空间复杂度：O（n）
 
 struct Token {
     var char:Character

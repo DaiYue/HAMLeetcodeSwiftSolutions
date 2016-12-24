@@ -1,6 +1,7 @@
 // #6 ZigZag Conversion https://leetcode.com/problems/zigzag-conversion/
 // 非常简单的题，唯一的难点就是题目本身描述得不太清楚了。需要自己考虑 row = 1、2 的边界情况。
 // swift 有个 stride 函数用来处理 for step 的情况。
+// 时间复杂度：O(n) 空间复杂度：O(n)
 
 class Solution {
     func convert(_ s: String, _ numRows: Int) -> String {
