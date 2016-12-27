@@ -1,4 +1,6 @@
 // #14 Longest Common Prefix https://leetcode.com/problems/longest-common-prefix/
+// 太简单的字符串处理，没什么可说的。
+// 时间复杂度：O(nm) 空间复杂度：O(nm)
 
 
 class Solution {
