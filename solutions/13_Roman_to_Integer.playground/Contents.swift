@@ -1,5 +1,6 @@
-// #12 Roman to Integer https://leetcode.com/problems/roman-to-integer/
-//
+// #13 Roman to Integer https://leetcode.com/problems/roman-to-integer/
+// 很简单的题，没啥可说的。分情况讨论，简单递归即可（我怎么这么喜欢递归……）
+// 时间复杂度：O(n) 空间复杂度：O(n)
 
 class Solution {
     func romanToInt(_ s: String) -> Int {
