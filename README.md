@@ -18,7 +18,9 @@
 | 12 | [Integer to Roman](https://leetcode.com/problems/integer-to-roman/) | [题解](./solutions/12_Integer_to_Roman.playground/Contents.swift) |
 | 13 | [Roman to Integer](https://leetcode.com/problems/roman-to-integer/) | [题解](./solutions/13_Roman_to_Integer.playground/Contents.swift) |
 | 14 | [Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix/) | [题解](./solutions/14_Longest_Common_Prefix.playground/Contents.swift) |
-| 15 | [3Sum](https://leetcode.com/problems/3sum/) | [题解](./solutions/15_3sum.playground/Contents.swift) |
+| 15 | [3Sum](https://leetcode.com/problems/3sum/) | [题解](./solutions/15_3Sum.playground/Contents.swift) |
 | 16 | [3Sum closest](https://leetcode.com/problems/3sum-closest/) | [题解](./solutions/16_3Sum_Closest.playground/Contents.swift) |
 | 17 | [Letter Combinations of a Phone Number](https://leetcode.com/problems/letter-combinations-of-a-phone-number/) | [题解](./solutions/17_Letter_Combinations_of_a_Phone_Number.playground/Contents.swift) |
 | 18 | [4Sum](https://leetcode.com/problems/4sum/) | [题解](./solutions/18_4Sum.playground/Contents.swift) |
+| 19 | [Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list) | [题解](./solutions/19_Remove_Nth_Node_From_End_of_List.playground/Contents.swift) |
+| 20 | [Valid Parentheses](https://leetcode.com/problems/valid-parentheses/) | [题解](./solutions/20_Valid_Parentheses.playground/Contents.swift) |

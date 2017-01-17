@@ -1,6 +1,6 @@
 // #21 Merge Two Sorted Lists https://leetcode.com/problems/merge-two-sorted-lists/
 // 很简单的归并排序，两个指针分别指向两个链表头，比较哪个指向的节点小就把哪个节点加入结果，然后把指针往后移就行了
-// 现在我也学会了像题解那样，在链表头部搞一个 dummy，简化代码
+// 现在我也学会了像题解那样，在链表头部搞一个 dummy，简化代码。另外这道题可以用到 swift 的 ?? 运算符
 // 时间复杂度：O(n) 空间复杂度：O(1)
 
 public class ListNode {
@@ -27,11 +27,8 @@ class Solution {
             }
             tail = tail.next!
         }
-        if p1 != nil {
-            tail.next = p1
-        } else if p2 != nil {
-            tail.next = p2
-        }
+        
+        tail.next = p1 ?? p2
         return head.next
     }
 }
