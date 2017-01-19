@@ -24,4 +24,4 @@
 | 18 | [4Sum](https://leetcode.com/problems/4sum/) | [题解](./solutions/18_4Sum.playground/Contents.swift) |
 | 19 | [Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list) | [题解](./solutions/19_Remove_Nth_Node_From_End_of_List.playground/Contents.swift) |
 | 20 | [Valid Parentheses](https://leetcode.com/problems/valid-parentheses/) | [题解](./solutions/20_Valid_Parentheses.playground/Contents.swift) |
-| 21 | [Merge Two Sorted Lists](https://leetcode.com/problems/merge_two_sorted_lists/) | [题解](./solutions/21_Merge_Two_Sorted_Lists.playground/Contents.swift) |
+| 21 | [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/) | [题解](./solutions/21_Merge_Two_Sorted_Lists.playground/Contents.swift) |
