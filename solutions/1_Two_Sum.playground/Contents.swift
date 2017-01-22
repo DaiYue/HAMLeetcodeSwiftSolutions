@@ -7,16 +7,27 @@ import UIKit
 class Solution {
     func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
         
+        var array:[[Int]] = []
+        nums.enumerated().forEach { (offset: Int, element: Int)in
+            if let index = nums.index(where: { (target - element) == $0}) {
+                if index != offset {
+                    array.append([index,offset])
+                }
+            }
+        }
+        return array[0]
+    }
+    
+    func twoSum1(_ nums: [Int], _ target: Int) -> [Int] {
+        
         var numberIndexDict = [Int:Int]()
         
         for (index, num) in nums.enumerated() {
             guard let pairedIndex = numberIndexDict[target - num] else {
-                // 把自身放入 hash 表
                 numberIndexDict[num] = index
                 continue
             }
             
-            // 配对的数已存在
             return [pairedIndex, index]
         }
         
@@ -25,4 +36,4 @@ class Solution {
 }
 
 let solution = Solution()
-solution.twoSum([3,-2,4], 1)
+solution.twoSum([3,-2,4], 6)
