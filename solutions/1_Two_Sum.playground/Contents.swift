@@ -5,20 +5,20 @@
 import UIKit
 
 class Solution {
-    func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
-        
-        var array:[[Int]] = []
-        nums.enumerated().forEach { (offset: Int, element: Int)in
-            if let index = nums.index(where: { (target - element) == $0}) {
-                if index != offset {
-                    array.append([index,offset])
-                }
-            }
-        }
-        return array[0]
-    }
+//    func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
+//        
+//        var array:[[Int]] = []
+//        nums.enumerated().forEach { (offset: Int, element: Int)in
+//            if let index = nums.index(where: { (target - element) == $0}) {
+//                if index != offset {
+//                    array.append([index,offset])
+//                }
+//            }
+//        }
+//        return array[0]
+//    }
     
-    func twoSum1(_ nums: [Int], _ target: Int) -> [Int] {
+    func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
         
         var numberIndexDict = [Int:Int]()
         
@@ -36,4 +36,4 @@ class Solution {
 }
 
 let solution = Solution()
-solution.twoSum([3,-2,4], 6)
+solution.twoSum([3,2,4], 6)
