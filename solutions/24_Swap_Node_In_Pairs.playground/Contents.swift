@@ -32,4 +32,4 @@ class Solution {
     }
 }
 
-Solution().swapPairs(nil)
+Solution().swapPairs(ListNode(1))
