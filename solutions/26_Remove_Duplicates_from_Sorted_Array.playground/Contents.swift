@@ -1,5 +1,6 @@
 // #26 Remove Duplicates from Sorted Array https://leetcode.com/problems/remove-duplicates-from-sorted-array/
 // 很简单的数组处理。一个指针往后读，一个指针指向写入的位置，读到不重复的（跟前一位不一样的）就在写指针的位置写入，不然继续往后读即可。
+// 从这道题我们也可以学到如何在 swift 的函数里传进一个可变的参数~
 // 时间复杂度：O(n) 空间复杂度：O(1)
 
 class Solution {
