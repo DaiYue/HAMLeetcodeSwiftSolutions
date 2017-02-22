@@ -1,5 +1,6 @@
 // #336 Palindrome Pair https://leetcode.com/problems/palindrome-pairs/?tab=Description
 // 这个题我并没有通过，现在还是超时状态。但我不打算继续做了。从理论分析，我现在的解法跟 Solution 里的并无区别，过不了想来就是 swift 的锅…… 比如 reverse 字符串…… 我懒得去为这种语言单独优化细节了。
+// 顺便说，我觉得 case 里的 "" 真是毫无意义，这应该算是不好的 case。
 // 时间复杂度：O(n * m^2) 空间复杂度：O(n)
 
 class Solution {
