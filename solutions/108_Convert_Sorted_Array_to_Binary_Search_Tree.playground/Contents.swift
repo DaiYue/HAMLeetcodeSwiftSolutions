@@ -1,5 +1,6 @@
 // #108 Convert Sorted Array to Binary Search Tree https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/?tab=Description
 // 简单的数据结构题，只要知道 BST 的定义就能做出来。树的题一般都是递归的方法比较方便。
+// 我奇怪的是为啥这道题我做得这么慢呢，加上判断只能 beat 12%。其他人怎么做的？是不是非递归比较快呢。
 // 时间复杂度：O(n) 空间复杂度：O(n)
 
 public class TreeNode {
