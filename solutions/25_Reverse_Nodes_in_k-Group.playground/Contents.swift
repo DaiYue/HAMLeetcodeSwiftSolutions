@@ -44,6 +44,7 @@ class Solution {
         
         return dummy.next
     }
+    
 }
 
 let node1 = ListNode(1)
