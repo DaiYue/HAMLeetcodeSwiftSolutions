@@ -35,10 +35,38 @@ class Solution {
         
         return maxLength
     }
+    
+    func lengthOfLongestSubstring2(_ s: String) -> Int {
+        
+        var maxLength = 0
+        var currentLength = 0
+        
+        var chars = [Character](s.characters)
+        
+        guard chars.count > 1 else {
+            return chars.count
+        }
+        
+        for index in 0 ..< chars.count - 1 {
+            var letterAppearedSet = Set<Character>()
+            var length = 1
+            while length <= chars.count - index {
+                let char = chars[index + length - 1]
+                if letterAppearedSet.contains(char) { // 已经出现重复，后面不可能再有解了
+                    break
+                }
+                letterAppearedSet.insert(char)
+                
+                maxLength = max(maxLength, length)
+                length += 1
+            }
+        }
+        
+        return maxLength
+    }
 }
 
-Solution().lengthOfLongestSubstring("abcabcbb")
+Solution().lengthOfLongestSubstring2("abcabcbb")
 Solution().lengthOfLongestSubstring("bbbbb")
 Solution().lengthOfLongestSubstring("pwwkew")
 Solution().lengthOfLongestSubstring("")
-max
